@@ -1,4 +1,114 @@
 {
+  "contact": {
+    "title": "Get In Touch",
+    "message": "Whether you have an opportunity, a question, or just want to say hi, feel free to reach out. I'm always happy to connect and have a conversation.",
+    "phone": "+63 976 597 9605",
+    "email": "vz.gallego@gmail.com",
+    "social": [
+      {
+        "name": "Facebook",
+        "url": "https://www.facebook.com/chot.gallego/",
+        "icon": "fab fa-facebook"
+      },
+      {
+        "name": "LinkedIn",
+        "url": "https://linkedin.com/in/vonzeusgallego",
+        "icon": "fab fa-linkedin"
+      },
+      {
+        "name": "GitHub",
+        "url": "https://github.com/Choting",
+        "icon": "fab fa-github"
+      }
+    ]
+  },
+  "banner": {
+    "name": "Von Zeus Gallego",
+    "title": "Front End Developer",
+    "description": "Focused on enterprise web and mobile applications",
+    "profileImage": "assets/img/myPic.png",
+    "backgroundImage": "assets/img/banner_bg.jpg",
+    "logo": "VZG"
+  },
+  "about": {
+    "title": "About Me",
+    "paragraphs": [
+      "I am a Front-End Developer with 8+ years of experience (since 2017), building web and mobile applications that are responsive and easy to use. I work with React, Ionic, Angular, AngularJS, TypeScript, JavaScript, Java, HTML5, SCSS, Tailwind CSS, and Cordova to create modular components, integrate APIs, and deliver smooth user experiences.",
+      "I enjoy working in Agile teams, writing clean and maintainable code, and building applications that are functional, efficient, and easy to scale or update."
+    ]
+  },
+  "skills": [
+    {
+      "name": "React",
+      "icon": "fab fa-react",
+      "color": "text-cyan-500"
+    },
+    {
+      "name": "Angular",
+      "icon": "fab fa-angular",
+      "color": "text-red-600"
+    },
+    {
+      "name": "TypeScript",
+      "icon": "fab fa-js-square",
+      "color": "text-blue-600"
+    },
+    {
+      "name": "JavaScript",
+      "icon": "fab fa-js-square",
+      "color": "text-yellow-500"
+    },
+    {
+      "name": "HTML",
+      "icon": "fab fa-html5",
+      "color": "text-orange-500"
+    },
+    {
+      "name": "SCSS",
+      "icon": "fab fa-sass",
+      "color": "text-pink-500"
+    },
+    {
+      "name": "Java",
+      "icon": "fab fa-java",
+      "color": "text-orange-600"
+    },
+    {
+      "name": "Tailwind",
+      "icon": "fas fa-palette",
+      "color": "text-blue-500"
+    },
+    {
+      "name": "Ionic",
+      "icon": "fas fa-mobile-alt",
+      "color": "text-purple-600"
+    },
+    {
+      "name": "Cordova",
+      "icon": "fas fa-mobile-alt",
+      "color": "text-gray-700"
+    },
+    {
+      "name": "Android Studio",
+      "icon": "fab fa-android",
+      "color": "text-green-500"
+    },
+    {
+      "name": "Xcode",
+      "icon": "fab fa-apple",
+      "color": "text-gray-800"
+    },
+    {
+      "name": "PHP",
+      "icon": "fab fa-php",
+      "color": "text-indigo-600"
+    },
+    {
+      "name": "AngularJS",
+      "icon": "fab fa-angular",
+      "color": "text-red-500"
+    }
+  ],
   "experiences": [
     {
       "id": 1,
@@ -7,8 +117,23 @@
       "startDate": "June 2022",
       "endDate": "PRESENT",
       "achievements": [
-        "Assigned as the sole UI developer for the company’s internal mobile application built on Ionic Cordova 3, responsible for production support, client-requested enhancements, and solution design in collaboration with stakeholders and backend teams.",
-        "Simultaneously contributed to one of the company’s main public-facing applications in Hong Kong (thousands of daily users) using Ionic 5, as part of a large front-end team. Key contributions include integrating Okta authentication (proof of concept and full implementation), fixing production issues, addressing vulnerabilities, and customizing/updating plugins to ensure compliance with Android and iOS store requirements."
+        "Assigned as the sole UI developer for an internal mobile application built with Ionic Cordova 3, responsible for production support, client requested enhancements, and UI solution design in close collaboration with stakeholders and backend teams.",
+        "Simultaneously contributed to a large-scale public-facing application in Hong Kong (serving thousands of daily users) using Ionic 5 as part of a front-end team. Key contributions included Okta authentication integration (POC to full implementation), production issue fixes, vulnerability remediation, and customization and maintenance of Cordova plugins to meet Android and iOS store compliance.",
+        "Currently part of a new initiative to consolidate multiple Sun Life sub-websites into a single unified platform built with React, focusing on scalable UI architecture, shared components, and consistent user experience across regions."
+      ],
+      "technologies": [
+        "React",
+        "Ionic",
+        "Cordova",
+        "Angular",
+        "TypeScript",
+        "JavaScript",
+        "HTML",
+        "SCSS",
+        "Tailwind",
+        "AngularJS",
+        "Android Studio",
+        "Xcode"
       ]
     },
     {
@@ -19,18 +144,22 @@
       "endDate": " June 2022",
       "achievements": [
         "Immediately assigned to Sunlife Globa Solution upon start where I contributed as a front-end developer for three years before being signed directly by Sunlife Globa Solution."
-      ]
+      ],
+      "technologies": []
     },
     {
       "id": 3,
-      "title": "Mobile Developer",
+      "title": "Full Stack Developer",
       "company": "Fruitwishes Int Corp",
       "startDate": "July 2017",
       "endDate": "November 2020",
       "achievements": [
-        "Created and maintained the majority of the company’s in-house mobile and web applications, supporting daily business operations.",
-        "Learned Ionic and contributed to internal projects"
-      ]
+        "Developed and maintained the majority of the company’s in-house mobile and web applications, supporting daily business operations across multiple teams.",
+        "Built and enhanced Mostyle POS, an internal point-of-sale system used by in-house businesses, covering both frontend and backend functionality.",
+        "Worked as a full stack developer, using Ionic for mobile and web interfaces, PHP for backend services, and managing deployments and updates across Android (Android Studio) and iOS (Xcode) environments.",
+        "Gained hands-on experience delivering end-to-end features, from UI implementation to backend integration, while supporting production systems."
+      ],
+      "technologies": ["Ionic", "Android Studio", "Xcode", "Java", "PHP"]
     }
   ]
 }

@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Von Zeus Gallego — CV</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -11,6 +12,13 @@
       rel="stylesheet"
     />
     <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <script>
       tailwind.config = {
         theme: {
@@ -29,7 +37,7 @@
     <section
       id="banner"
       class="relative bg-cover bg-center"
-      style="background-image: url(&quot;assets/banner_bg.jpg&quot;)"
+      style="background-image: url(&quot;assets/img/banner_bg.jpg&quot;)"
     >
       <!-- overlay: darken + blur -->
       <div
@@ -41,14 +49,14 @@
         <div
           class="flex items-center justify-between border-b border-white/50 pb-2"
         >
-          <div class="text-white font-bold text-2xl">VZG</div>
+          <div id="bannerLogo" class="text-white font-bold text-2xl">VZG</div>
           <nav class="space-x-1 md:space-x-6 text-xs md:text-base">
             <a href="#about" class="text-white hover:underline">About</a>
             <a href="#experience" class="text-white hover:underline"
               >Experience</a
             >
             <a href="#skills" class="text-white hover:underline">Skills</a>
-            <a href="#make" class="text-white hover:underline">Contact me</a>
+            <a href="#contact" class="text-white hover:underline">Contact me</a>
           </nav>
         </div>
 
@@ -59,8 +67,9 @@
           <!-- Left: circled image -->
           <div class="flex-shrink-0">
             <img
-              src="assets/myPic.png"
-              alt="Von Zeus"
+              id="bannerImage"
+              src="assets/img/myPic.png"
+              alt="Profile"
               class="w-24 h-24 md:w-48 md:h-48 rounded-full object-cover ring-4 ring-white shadow-xl"
             />
           </div>
@@ -68,33 +77,37 @@
           <!-- Right: text -->
           <div class="text-white">
             <div class="div-one flex flex-col gap-1 md:gap-4">
-              <h1 class="text-sm md:text-base md:font-extrabold">
+              <h1
+                id="bannerGreeting"
+                class="text-sm md:text-base md:font-extrabold"
+              >
                 Hi, I am Von Zeus Gallego
               </h1>
-              <h2 class="text-xl md:text-2xl font-semibold">
+              <h2 id="bannerTitle" class="text-xl md:text-2xl font-semibold">
                 Front End Developer
               </h2>
               <p
+                id="bannerDescription"
                 class="max-w-2xl text-xs md:text-sm md:text-base text-white/90 font-semibold"
               >
                 Focused on enterprise web and mobile applications
               </p>
             </div>
             <div class="div-two hidden md:block mt-4">
-              <p class="mt-4 md:text-base text-white/90">
-                React • Ionic • Java • Cordova • Angular • Type script • Java
-                script • HTML5 • SCSS • Tailwind CSS • AngularJS • Angular
-              </p>
+              <p
+                id="bannerSkillsDesktop"
+                class="mt-4 md:text-base text-white/90"
+              ></p>
             </div>
           </div>
         </div>
 
         <!-- Mobile-only info (below image + name/title) -->
         <div class="block mt-4 md:hidden text-white">
-          <p class="mt-2 text-[8px] text-white/90 text-center">
-            React • Ionic • Java • Cordova • Angular • Type script • Java script
-            • HTML5 • SCSS • Tailwind CSS • AngularJS • Angular
-          </p>
+          <p
+            id="bannerSkillsMobile"
+            class="mt-2 text-[8px] text-white/90 text-center"
+          ></p>
         </div>
       </div>
     </section>
@@ -102,70 +115,195 @@
     <!-- About section -->
     <section id="about" class="bg-white">
       <div class="max-w-6xl mx-auto p-6">
-        <h2 class="text-3xl font-bold">About Me</h2>
+        <h2 id="aboutTitle" class="text-3xl font-bold">About Me</h2>
       </div>
       <div class="bg-gray-100/50 p-6">
-        <div class="max-w-6xl mx-auto">
-          <p class="text-gray-700 leading-relaxed">
-            I am a Front-End Developer with 7+ years of experience (since 2017),
-            building web and mobile applications that are responsive and easy to
-            use. I work with React, Ionic, Angular, AngularJS, TypeScript,
-            JavaScript, Java, HTML5, SCSS, Tailwind CSS, and Cordova to create
-            modular components, integrate APIs, and deliver smooth user
-            experiences.
-          </p>
-          <p class="mt-2">
-            I enjoy working in Agile teams, writing clean and maintainable code,
-            and building applications that are functional, efficient, and easy
-            to scale or update.
-          </p>
+        <div id="aboutContent" class="max-w-6xl mx-auto">
+          <!-- Content will be rendered here -->
         </div>
       </div>
     </section>
 
     <!-- Experience section -->
-    <section id="experience" class="bg-white py-12">
+    <section id="experience" class="bg-white pt-8">
       <div class="max-w-6xl mx-auto px-6">
         <h2 class="text-3xl font-bold mb-8">Experience</h2>
-        
-        <!-- Experience Cards Grid -->
-        <div id="experienceCards" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      </div>
+      <!-- Experience Cards Grid -->
+      <div class="bg-gray-100/50 p-6">
+        <div
+          id="experienceCards"
+          class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6"
+        >
           <!-- Cards will be rendered here by JavaScript -->
         </div>
-
-        <script>
-          // Fetch experience data from portfolio.json
-          fetch('assets/data/portfolio.json')
-            .then(response => response.json())
-            .then(data => {
-              const container = document.getElementById('experienceCards');
-              container.innerHTML = ''; // Clear the container
-              
-              // Loop through experiences and create cards
-              data.experiences.forEach(experience => {
-                const card = document.createElement('div');
-                card.className = 'bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow';
-                
-                // Build achievements list
-                const achievementsList = experience.achievements
-                  .map(achievement => `<li>• ${achievement}</li>`)
-                  .join('');
-                
-                card.innerHTML = `
-                  <h3 class="text-xl font-bold text-gray-900">${experience.title}</h3>
-                  <p class="text-sm text-gray-500 mt-1">${experience.company} • ${experience.startDate} - ${experience.endDate}</p>
-                  <ul class="mt-4 text-gray-700 space-y-2 text-sm">
-                    ${achievementsList}
-                  </ul>
-                `;
-                
-                container.appendChild(card);
-              });
-            })
-            .catch(error => console.error('Error loading experience data:', error));
-        </script>
       </div>
     </section>
+
+    <!-- Skills section -->
+    <section id="skills" class="bg-white pt-8">
+      <div class="max-w-6xl mx-auto px-6">
+        <h2 id="skillsTitle" class="text-3xl font-bold mb-8">Skills</h2>
+      </div>
+      <div class="bg-gray-100/50 p-6">
+        <div
+          id="skillsContainer"
+          class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6"
+        >
+          <!-- Skills will be rendered here -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact/Footer section -->
+    <section id="contact" class="bg-gray-900 text-white py-12">
+      <div class="max-w-6xl mx-auto px-6">
+        <h2 id="contactTitle" class="text-3xl font-bold mb-4 text-center">
+          Get In Touch
+        </h2>
+        <p
+          id="contactMessage"
+          class="text-center text-gray-300 mb-8 max-w-2xl mx-auto"
+        ></p>
+        <div id="contactContent" class="flex flex-col items-center gap-8">
+          <!-- Contact info will be rendered here -->
+        </div>
+      </div>
+    </section>
+
+    <script>
+      // Fetch all data from portfolio.json and populate the page
+      fetch("assets/data/portfolio.json")
+        .then((response) => response.json())
+        .then((data) => {
+          // Populate Banner
+          const banner = data.banner;
+          document.getElementById("banner").style.backgroundImage =
+            `url("${banner.backgroundImage}")`;
+          document.getElementById("bannerLogo").textContent = banner.logo;
+          document.getElementById("bannerGreeting").textContent =
+            `Hi, I am ${banner.name}`;
+          document.getElementById("bannerTitle").textContent = banner.title;
+          document.getElementById("bannerDescription").textContent =
+            banner.description;
+          document.getElementById("bannerImage").src = banner.profileImage;
+          document.getElementById("bannerImage").alt = banner.name;
+          const skills = data.skills.map((skill) => skill.name).join(" • ");
+          //   const skills = banner.skills.join(' • ');
+          document.getElementById("bannerSkillsDesktop").textContent = skills;
+          document.getElementById("bannerSkillsMobile").textContent = skills;
+
+          // Populate About
+          const about = data.about;
+          document.getElementById("aboutTitle").textContent = about.title;
+          const aboutHTML = about.paragraphs
+            .map(
+              (paragraph, index) =>
+                `<p class="text-gray-700 leading-relaxed${index > 0 ? " mt-2" : ""}">${paragraph}</p>`,
+            )
+            .join("");
+          document.getElementById("aboutContent").innerHTML = aboutHTML;
+
+          // Populate Skills
+          if (data.skills) {
+            const skillsContainer = document.getElementById("skillsContainer");
+            skillsContainer.innerHTML = "";
+            data.skills.forEach((skill) => {
+              const skillCard = document.createElement("div");
+              skillCard.className =
+                "flex flex-col items-center justify-center p-6 bg-white rounded-lg border border-gray-200 hover:shadow-md transition-shadow";
+              skillCard.innerHTML = `
+                <i class="${skill.icon} text-4xl ${skill.color} mb-3"></i>
+                <p class="text-sm font-semibold text-gray-900 text-center">${skill.name}</p>
+              `;
+              skillsContainer.appendChild(skillCard);
+            });
+          }
+
+          // Populate Experience
+          const experienceContainer =
+            document.getElementById("experienceCards");
+          experienceContainer.innerHTML = "";
+          data.experiences.forEach((experience) => {
+            const card = document.createElement("div");
+            card.className =
+              "bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow";
+
+            const achievementsList = experience.achievements
+              .map((achievement) => `<li>• ${achievement}</li>`)
+              .join("");
+
+            const technologiesHTML =
+              experience.technologies && experience.technologies.length > 0
+                ? `<div class="mt-4 flex gap-3 flex-wrap">${experience.technologies
+                    .map((techName) => {
+                      const skill = data.skills.find(
+                        (s) => s.name === techName,
+                      );
+                      return skill
+                        ? `<i class="${skill.icon} text-xl text-gray-700" title="${techName}"></i>`
+                        : "";
+                    })
+                    .join("")}</div>`
+                : "";
+
+            card.innerHTML = `
+              <h3 class="text-xl font-bold text-gray-900">${experience.title}</h3>
+              <p class="text-sm text-gray-500 mt-1">${experience.company} • ${experience.startDate} - ${experience.endDate}</p>
+              <ul class="mt-4 text-gray-700 space-y-2 text-sm">
+                ${achievementsList}
+              </ul>
+              ${technologiesHTML}
+            `;
+
+            experienceContainer.appendChild(card);
+          });
+
+          // Populate Contact
+          if (data.contact) {
+            const contactContent = document.getElementById("contactContent");
+            const contact = data.contact;
+
+            // Set title and message
+            document.getElementById("contactTitle").textContent = contact.title;
+            document.getElementById("contactMessage").textContent =
+              contact.message;
+
+            // Phone and Email section
+            const contactInfo = document.createElement("div");
+            contactInfo.className =
+              "flex flex-col md:flex-row gap-8 items-center justify-center";
+            contactInfo.innerHTML = `
+              <a href="tel:${contact.phone.replace(/\s/g, "")}" class="flex items-center gap-3 hover:text-blue-400 transition">
+                <i class="fas fa-phone text-2xl"></i>
+                <span class="text-lg">${contact.phone}</span>
+              </a>
+              <a href="mailto:${contact.email}" class="flex items-center gap-3 hover:text-blue-400 transition">
+                <i class="fas fa-envelope text-2xl"></i>
+                <span class="text-lg">${contact.email}</span>
+              </a>
+            `;
+            contactContent.appendChild(contactInfo);
+
+            // Social links section
+            const socialDiv = document.createElement("div");
+            socialDiv.className = "flex gap-6 justify-center";
+            contact.social.forEach((social) => {
+              const link = document.createElement("a");
+              link.href = social.url;
+              link.target = "_blank";
+              link.rel = "noopener noreferrer";
+              link.className = "text-3xl hover:text-blue-400 transition";
+              link.title = social.name;
+              link.innerHTML = `<i class="${social.icon}"></i>`;
+              socialDiv.appendChild(link);
+            });
+            contactContent.appendChild(socialDiv);
+          }
+        })
+        .catch((error) =>
+          console.error("Error loading portfolio data:", error),
+        );
+    </script>
   </body>
 </html>
-<!doctype html>
