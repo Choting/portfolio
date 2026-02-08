@@ -5,6 +5,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Von Zeus Gallego — CV</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/icon.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/icon.png" />
+    <link rel="shortcut icon" href="assets/img/icon.png" />
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -43,7 +46,9 @@
         <div class="relative max-w-7xl mx-auto px-4 py-4 md:py-4">
             <!-- Top nav: name left, menu right -->
             <div class="flex items-center justify-between">
-                <div id="bannerLogo" class="text-white font-bold text-lg">VZG</div>
+                <div id="bannerLogo" class="flex items-center">
+                    <img src="assets/img/icon.png" alt="VZG Logo" class="w-6 h-6 md:w-12 md:h-12 object-contain" />
+                </div>
                 <nav class="space-x-1 md:space-x-6 text-xs md:text-base">
                     <a href="#about" class="text-white hover:underline">About</a>
                     <a href="#experience" class="text-white hover:underline">Experience</a>
@@ -155,7 +160,6 @@
                     const banner = data.banner;
                     document.getElementById("banner").style.backgroundImage =
                         `url("${banner.backgroundImage}")`;
-                    document.getElementById("bannerLogo").textContent = banner.logo;
                     document.getElementById("bannerGreeting").textContent =
                         `Hi, I am ${banner.name}`;
                     document.getElementById("bannerTitle").textContent = banner.title;
