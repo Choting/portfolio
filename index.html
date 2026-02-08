@@ -26,7 +26,7 @@
     <link rel="stylesheet" href="styles.css" />
 </head>
 
-<body class="antialiased text-gray-800 bg-white font-sans">
+<body class="antialiased text-gray-800 bg-white font-sans scroll-smooth">
     <div id="loadingScreen" class="fixed inset-0 z-50 flex items-center justify-center
          bg-gray-900
          transition-opacity duration-500 ease-out">
@@ -38,7 +38,7 @@
     <!-- Banner -->
     <section id="banner" class="relative bg-cover bg-center" style="background-image: url(&quot;assets/img/banner_bg.jpg&quot;)">
         <!-- overlay: darken + blur -->
-        <div class="absolute inset-0 bg-black/60 backdrop-blur-sm -webkit-backdrop-blur-sm"></div>
+        <div class="absolute inset-0 bg-gray-900/70 backdrop-blur-sm -webkit-backdrop-blur-sm"></div>
 
         <div class="relative max-w-7xl mx-auto px-4 py-4 md:py-4">
             <!-- Top nav: name left, menu right -->
@@ -53,7 +53,7 @@
             </div>
 
             <!-- Main banner content -->
-            <div class="max-w-6xl mt-6 md:mt-16 mx-auto flex flex-row items-center gap-4 md:gap-12 md:mb-9">
+            <div class="max-w-6xl mt-6 md:mt-16 mx-auto flex flex-row items-center gap-4 md:gap-12 md:mb-16">
                 <!-- Left: circled image -->
                 <div class="flex-shrink-0">
                     <img id="bannerImage" src="assets/img/myPic.png" alt="Profile" class="w-24 h-24 md:w-48 md:h-48 rounded-full object-cover ring-4 ring-white shadow-xl" />
@@ -292,7 +292,37 @@
         .catch((error) =>
           console.error("Error loading portfolio data:", error),
         );
+
+        document.addEventListener("DOMContentLoaded", () => {
+        const scrollTopBtn = document.getElementById("scrollTopBtn");
+        const aboutSection = document.getElementById("about");
+
+        if (!scrollTopBtn || !aboutSection) return;
+
+        window.addEventListener("scroll", () => {
+          const aboutTop = aboutSection.offsetTop;
+          const scrollPosition = window.scrollY + 120;
+
+              if (scrollPosition >= aboutTop) {
+                scrollTopBtn.classList.remove("opacity-0", "pointer-events-none");
+                scrollTopBtn.classList.add("opacity-100");
+              } else {
+                scrollTopBtn.classList.add("opacity-0", "pointer-events-none");
+                scrollTopBtn.classList.remove("opacity-100");
+              }
+            });
+        });
     </script>
+    <a href="#banner" id="scrollTopBtn" class="fixed bottom-6 right-6 z-50
+          flex items-center justify-center
+          w-12 h-12 rounded-full
+          bg-blue-800/20
+          text-white
+          shadow-lg
+          opacity-0 pointer-events-none
+          transition-all duration-300">
+        <i class="fas fa-chevron-up text-lg"></i>
+    </a>
 </body>
 
 </html>
