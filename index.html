@@ -176,6 +176,7 @@
       fetch("assets/data/portfolio.json")
         .then((response) => response.json())
         .then((data) => {
+        console.log("Loaded portfolio data:", data); // Debug log
           // Populate Banner
           const banner = data.banner;
           document.getElementById("banner").style.backgroundImage =
