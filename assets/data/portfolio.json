@@ -2,7 +2,7 @@
   "contact": {
     "title": "Get In Touch",
     "message": "Whether you have an opportunity, a question, or just want to say hi, feel free to reach out. I'm always happy to connect and have a conversation.",
-    "phone": "+63 976 597 9605",
+    "phone": "+639765979605",
     "email": "vz.gallego@gmail.com",
     "social": [
       {
@@ -124,10 +124,8 @@
       "technologies": [
         "React",
         "Ionic",
-        "Cordova",
         "Angular",
         "TypeScript",
-        "JavaScript",
         "HTML",
         "SCSS",
         "Tailwind",
