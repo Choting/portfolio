@@ -82,7 +82,9 @@
 
             <!-- Mobile-only info (below image + name/title) -->
             <div class="block mt-4 md:hidden text-white">
-                <p id="bannerSkillsMobile" class="mt-2 text-[8px] text-white/90 text-center"></p>
+                <div id="bannerSkillsMobile" class="flex flex-wrap justify-center gap-x-2 mt-4 text-[8px] text-white/90 text-center">
+                    <!-- JS will populate skills here -->
+                </div>
             </div>
         </div>
     </section>
@@ -161,10 +163,17 @@
                         banner.description;
                     document.getElementById("bannerImage").src = banner.profileImage;
                     document.getElementById("bannerImage").alt = banner.name;
-                    const skills = data.skills.map((skill) => skill.name).join(" • ");
-                    //   const skills = banner.skills.join(' • ');
-                    // document.getElementById("bannerSkillsDesktop").textContent = skills;
-                    document.getElementById("bannerSkillsMobile").textContent = skills;
+                    const skillsContainerMobile = document.getElementById("bannerSkillsMobile");
+                    skillsContainerMobile.innerHTML = data.skills
+                        .map(
+                            (skill, index) => `
+                          <span class="flex items-center gap-1">
+                            <i class="${skill.icon}"></i>
+                            <span>${skill.name}</span>
+                          </span>
+                        `
+                        )
+                        .join("");
                     const skillContainer = document.getElementById("bannerSkillsDesktop");
                     skillContainer.innerHTML = data.skills
                         .map(
