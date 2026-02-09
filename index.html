@@ -161,10 +161,10 @@
         <h2 class="text-3xl font-bold mb-8">Experience</h2>
       </div>
       <!-- Experience Cards Grid -->
-      <div class="bg-gray-100/50 p-6">
+      <div class="bg-gray-100/50 px-4 py-6">
         <div
           id="experienceCards"
-          class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6"
+          class="max-w-6xl mx-auto grid grid-cols-1 gap-6"
         >
           <!-- Cards will be rendered here by JavaScript -->
         </div>
@@ -259,7 +259,7 @@
           const aboutHTML = about.paragraphs
             .map(
               (paragraph, index) =>
-                `<p class="text-gray-700 leading-relaxed${index > 0 ? " mt-2" : ""}">${paragraph}</p>`,
+                `<p class="text-gray-700 text-lg leading-relaxed${index > 0 ? " mt-2" : ""}">${paragraph}</p>`,
             )
             .join("");
           document.getElementById("aboutContent").innerHTML = aboutHTML;
@@ -271,7 +271,7 @@
             data.skills.forEach((skill) => {
               const skillCard = document.createElement("div");
               skillCard.className =
-                "flex flex-col items-center justify-center p-6 bg-white rounded-lg border border-gray-200 hover:shadow-md transition-shadow";
+                "flex flex-col items-center justify-center p-6 bg-white rounded-sm border border-gray-200 hover:shadow-md transition-shadow";
               skillCard.innerHTML = `
                 <i class="${skill.icon} text-4xl ${skill.color} mb-3"></i>
                 <p class="text-sm font-semibold text-gray-900 text-center">${skill.name}</p>
@@ -284,37 +284,55 @@
           const experienceContainer =
             document.getElementById("experienceCards");
           experienceContainer.innerHTML = "";
+
           data.experiences.forEach((experience) => {
             const card = document.createElement("div");
             card.className =
-              "bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow";
+              "bg-white border border-gray-200 rounded-sm shadow-sm hover:shadow-md transition-shadow overflow-hidden";
 
             const achievementsList = experience.achievements
-              .map((achievement) => `<li>• ${achievement}</li>`)
+              .map(
+                (achievement) => `<li class="flex gap-2">• ${achievement}</li>`,
+              )
               .join("");
 
             const technologiesHTML =
               experience.technologies && experience.technologies.length > 0
-                ? `<div class="mt-4 flex gap-3 flex-wrap">${experience.technologies
-                    .map((techName) => {
-                      const skill = data.skills.find(
-                        (s) => s.name === techName,
-                      );
-                      return skill
-                        ? `<i class="${skill.icon} text-xl text-gray-700" title="${techName}"></i>`
-                        : "";
-                    })
-                    .join("")}</div>`
+                ? `
+                <div class="bg-gray-100 border-gray-200 px-6 py-4 rounded-b-sm">
+                  <div class="flex flex-wrap items-center gap-x-2 md:gap-x-4">
+                    ${experience.technologies
+                      .map((techName) => {
+                        const skill = data.skills.find((s) => s.name === techName);
+                        return skill
+                          ? `
+                            <div class="flex items-center gap-2 text-gray-600">
+                              <i class="${skill.icon} text-sm text-gray-800"></i>
+                            </div>
+                          `
+                          : "";
+                      })
+                      .join("")}
+                  </div>
+                </div>
+              `
                 : "";
 
             card.innerHTML = `
-              <h3 class="text-xl font-bold text-gray-900">${experience.title}</h3>
-              <p class="text-sm text-gray-500 mt-1">${experience.company} • ${experience.startDate} - ${experience.endDate}</p>
-              <ul class="mt-4 text-gray-700 space-y-2 text-sm">
+            <div class="px-6 pt-6 pb-4">
+                <h3 class="text-xl font-semibold text-gray-900">
+                  ${experience.title}
+                </h3>
+                <p class="text-sm text-gray-500 mt-1">
+                  ${experience.company} • ${experience.startDate} – ${experience.endDate}
+                </p>
+
+              <ul class="mt-4 text-gray-700 space-y-2 text-sm leading-relaxed">
                 ${achievementsList}
               </ul>
-              ${technologiesHTML}
-            `;
+            </div>
+            ${technologiesHTML}
+          `;
 
             experienceContainer.appendChild(card);
           });
