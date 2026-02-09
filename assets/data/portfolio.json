@@ -150,9 +150,11 @@
             "endDate": "November 2020",
             "achievements": [
                 "Developed and maintained the majority of the company’s in-house mobile and web applications, supporting daily business operations across multiple teams.",
-                "Built and enhanced Mostyle POS, an internal point-of-sale system used by in-house businesses, covering both frontend and backend functionality.",
-                "Worked as a full stack developer, using Ionic for mobile and web interfaces, PHP for backend services, and managing deployments and updates across Android (Android Studio) and iOS (Xcode) environments.",
-                "Gained hands-on experience delivering end-to-end features, from UI implementation to backend integration, while supporting production systems."
+                "Contributed as part of the development team to building and enhancing an internal POS system, supporting in-house business operations across multiple locations.",
+                "Worked as part of a two-person team to build a web-based shop for local vendors in Manila, enabling product listings, ordering, and basic e-commerce functionality.",
+                "Developed a delivery rider mobile application integrated with the shop platform, supporting order fulfillment and delivery tracking workflows.",
+                "Worked as a full stack developer using Ionic for mobile and web interfaces, PHP for backend services, and handling builds and deployments for Android (Android Studio) and iOS (Xcode).",
+                "Gained hands-on experience delivering end-to-end features, from UI implementation to backend integration, while supporting and maintaining production systems."
             ],
             "technologies": ["Ionic", "Android Studio", "Xcode", "Java", "PHP"]
         }
